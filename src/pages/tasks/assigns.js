@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 
 import { LoggedNav } from "../../components/navbar/loggedNav";
 import { AssignCard } from "../../components/card/assignCard";
@@ -21,7 +22,7 @@ export const Assigns = () => {
             const userData = await checkUser();
             userData ? setUser(userData) : navigate("/");
             const assignsData = await getAssigns(group_id);
-            setAssigns(assignsData);
+            assignsData.length === 0 ? NotificationManager.warning("No hay asignaciones en este grupo", "Alerta", 2000) : setAssigns(assignsData);
         })();
     }, []);
 

@@ -12,7 +12,7 @@ export const MembersTable = ({ user_id, group_id, rows, setRows }) => {
     const handleRequest = async (member_id, group_id, admin) => {
         const errors = await changeAdmin(member_id, group_id, admin);
         if (!checkErrors(errors)) {
-            NotificationManager.warning("Privilegios del usuario modificados", "Exito", 2000);
+            NotificationManager.warning("Privilegios del usuario modificados", "Aviso", 2000);
             reloadTable(loadMembers(group_id, user_id), setRows);
         }
     };
@@ -24,7 +24,7 @@ export const MembersTable = ({ user_id, group_id, rows, setRows }) => {
     const handleOut = async (member_id) => {
         const errors = await outGroup(member_id, group_id);
         if (!checkErrors(errors)) {
-            NotificationManager.warning("Miembro expulsado", "Exito", 2000);
+            NotificationManager.warning("Miembro expulsado", "Aviso", 2000);
             reloadTable(loadMembers(group_id, user_id), setRows);
         }
     };
@@ -40,7 +40,7 @@ export const MembersTable = ({ user_id, group_id, rows, setRows }) => {
                     (<button title="Quitar privilegios" onClick={() => handleRemove(params.row.id)} className="btn btn-outline-warning mx-1"><RemoveModerator /> </button>) : 
                     (<button title="Otorgar privilegios" onClick={() => handleGive(params.row.id)} className="btn btn-outline-primary mx-1"><AddModerator /></button>)
                 }  
-                <button className="btn btn-outline-danger mx-1" title="Expulsar miembro" onClick={() => handleOut(params.row.id)}>
+                <button className="btn btn-outline-danger m-1" title="Expulsar miembro" onClick={() => handleOut(params.row.id)}>
                     <ExitToApp />
                 </button>
             </div>

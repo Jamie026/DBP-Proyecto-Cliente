@@ -13,8 +13,11 @@ export const AssignCard = ({ assign }) => {
                 <p className="card-text">
                     {assign.description}
                 </p>
-                <a href="#" className="btn btn-outline-primary w-75">
+                <a href="#" className="btn btn-outline-primary m-1">
                     Gestionar asignación
+                </a>
+                <a href="#" className="btn btn-outline-danger m-1">
+                    Eliminar asignación
                 </a>
             </div>
             <div className="card-footer text-muted">Fecha asignación: {assign.date}</div>

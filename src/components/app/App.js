@@ -25,7 +25,7 @@ export default function App() {
                 <Route path="/groups" element={<GroupData />} />
                 <Route path="/tasks" element={<TaskData />} />
                 <Route path="/group/:group_id" element={<EditGroup />} />
-                <Route path="/assign/:group_id" element={<Assigns />} />
+                <Route path="/assigns/:group_id" element={<Assigns />} />
             </Routes>
             <NotificationContainer />
         </BrowserRouter>

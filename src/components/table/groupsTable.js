@@ -15,7 +15,7 @@ export const GroupTable = ({ user_id, rows, setRows }) => {
 
     const handleEdit = async (group_id) => {
         const userIsAdmin = await checkAdmin(user_id, group_id);
-        userIsAdmin ? navigate("/group/" + group_id) : NotificationManager.warning("No tienes permisos para editar", "Error", 2000);
+        userIsAdmin ? navigate("/group/" + group_id) : NotificationManager.error("No tienes permisos para editar", "Error", 2000);
     };
 
     const handleDelete = async (group_id) => {
@@ -26,8 +26,6 @@ export const GroupTable = ({ user_id, rows, setRows }) => {
         }
     };
 
-    const handleOpen = (group_id) => navigate("/assign/" + group_id);
-
     const columns = [
         { field: "id", headerName: "ID", align: "center", headerAlign: "center", width: 100 },
         { field: "name", headerName: "Nombre", align: "center", headerAlign: "center", width: 220 },
@@ -35,13 +33,13 @@ export const GroupTable = ({ user_id, rows, setRows }) => {
         { field: "admin", headerName: "Permisos", align: "center", headerAlign: "center", width: 160, renderCell: (params) => (params.value === "Admin" ? <Check /> : <Close />) },
         { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 220, disableColumnMenu: true, renderCell: (params) => (
             <div>
-                <button className="btn btn-outline-primary mx-1" title="Ver asignaciones" onClick={() => handleOpen(params.row.id)}>
+                <a href={"/assigns/" + params.row.id} className="btn btn-outline-primary m-1" title="Ver asignaciones">
                     <Assignment />
-                </button>
-                <button className="btn btn-outline-warning mx-1" title="Editar grupo" onClick={() => handleEdit(params.row.id)}>
+                </a>
+                <button className="btn btn-outline-warning m-1" title="Editar grupo" onClick={() => handleEdit(params.row.id)}>
                     <Edit />
                 </button>
-                <button className="btn btn-outline-danger mx-1" title="Salir del grupo" onClick={() => handleDelete(params.row.id)}>
+                <button className="btn btn-outline-danger m-1" title="Salir del grupo" onClick={() => handleDelete(params.row.id)}>
                     <ExitToApp />
                 </button>
             </div>

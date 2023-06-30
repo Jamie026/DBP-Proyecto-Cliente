@@ -23,7 +23,7 @@ export const TaskTable = ({ user_id, rows, setRows }) => {
         { field: "description", headerName: "Descripción", align: "center", headerAlign: "center", width: 255 },
         { field: "assigns", headerName: "N° Asignaciones", align: "center", headerAlign: "center", width: 210 },
         { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 80, disableColumnMenu: true, renderCell: (params) => (
-            <button className="btn btn-outline-danger" title="Eliminar tarea" onClick={() => handleDelete(params.row.id)}>
+            <button className="btn btn-outline-danger m-1" title="Eliminar tarea" onClick={() => handleDelete(params.row.id)}>
                 <Delete />
             </button>
         )}
