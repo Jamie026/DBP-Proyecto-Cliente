@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 
 import { Form } from "../../components/common/form";
 import { AlertCard } from "../../components/common/alertCard";
@@ -7,12 +8,12 @@ import { LoggedNav } from "../../components/navbar/loggedNav";
 import { MembersTable } from "../../components/table/membersTable";
 
 import { checkUser } from "../../scripts/user/scripts";
-import { loadMembers, checkAdmin } from "../../scripts/group/scripts";
-import { reloadTable } from "../../scripts/common/scripts";
+import { loadMembers, checkAdmin, changeGroupData } from "../../scripts/group/scripts";
+import { reloadTable, checkErrors } from "../../scripts/common/scripts";
 
 const fields = [
     { key: "name", name: "name", label: "Nombre", prop: { type: "text" } },
-    { key: "password", name: "passsword", label: "Contraseña", prop: { type: "password" } }
+    { key: "password", name: "password", label: "Contraseña", prop: { type: "password" } }
 ];
 
 export const EditGroup = () => {
@@ -37,7 +38,12 @@ export const EditGroup = () => {
 
     const closeAlert = () => setShowAlert(false);
 
-    const handleUpdate = async () => {};
+    const handleUpdate = async (e) => {
+        e.preventDefault();
+        data.group = group_id;
+        const errors = await changeGroupData(fields, data);
+        if (!checkErrors(errors)) NotificationManager.success("Datos actualizados", "Exito", 2000);
+    };
 
     const handleDelete = async () => {};
 

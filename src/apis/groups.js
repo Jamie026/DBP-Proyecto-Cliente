@@ -45,6 +45,15 @@ export const checkMemberAdmi = async (user_id, group_id) => {
     }
 };
 
+export const updateGroupData = async (data) => {
+    try {
+        const response = await https.put("/updateGroupData", data);
+        return handleResponse(response);
+    } catch (error) {
+        return { error: error.response.data.error };
+    }
+};
+
 export const updateMemberAdmin = async (data) => {
     try {
         const response = await https.put("/updateAdminMember", data);

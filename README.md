@@ -5,7 +5,7 @@ Es necesario instalar las librerias necesarias por medio del comando:
 
 `npm i`
 
-Finalmente solo es necesario el comando: 
+Por último, solo es necesario el comando: 
 
 `npm start`
 

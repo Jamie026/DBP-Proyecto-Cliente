@@ -18,7 +18,7 @@ export const checkUser = async () => {
 export const endSession = async () => {
     const response = await logoutUser();
     if (response.error) return [response.error];
-    else return null;
+    else return [];
 };
 
 export const userData = async (user_id) => {
