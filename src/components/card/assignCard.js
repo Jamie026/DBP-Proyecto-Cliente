@@ -2,7 +2,7 @@ import React from "react";
 
 export const AssignCard = ({ assign }) => {
     return (
-        <div className="col-10 col-md-5 card text-center">
+        <div className="col-10 col-md-5 card text-center my-2">
             <div className="card-header">
                 {assign.state}
             </div>
