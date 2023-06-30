@@ -1,4 +1,4 @@
-import { checkErrors, validateFields } from "../common/scripts";
+import { validateFields } from "../common/scripts";
 import { createGroup, joinGroup, groupsByUser, deleteMember, checkMemberAdmi, 
         membersByGroup, updateMemberAdmin, updateGroupData } from "../../apis/groups";
 

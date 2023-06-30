@@ -14,7 +14,7 @@ export const createTask = async (data) => {
         const response = await https.post("/createTask", data);
         return handleResponse(response);
     } catch (error) {
-        return { error: error.response.data.error };
+        return { error: error.response.data.result.error };
     }
 };
 
@@ -23,7 +23,7 @@ export const deleteTask = async (task_id) => {
         const response = await https.delete("/deleteTask/" + task_id);
         return handleResponse(response);
     } catch (error) {
-        return { error: error.response.data.error };
+        return { error: error.response.data.result.error };
     }
 };
 
@@ -32,6 +32,6 @@ export const createAssign = async (data) => {
         const response = await https.post("/assignTask", data);
         return handleResponse(response);
     } catch (error) {
-        return { error: error.response.data.error };
+        return { error: error.response.data.result.error };
     }
 };

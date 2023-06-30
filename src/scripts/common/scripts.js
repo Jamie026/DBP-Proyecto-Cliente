@@ -35,7 +35,7 @@ export const validateFields = (fields, data) => {
 };
 
 export const handleResponse = (response) => {
-    if (response.status === 200) return { data: response.data, error: null };
+    if (response.status === 200) return { data: response.data.result, error: null };
     else throw new Error("Error: " + response.status);
 };
 
