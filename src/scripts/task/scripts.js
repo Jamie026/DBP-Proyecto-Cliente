@@ -60,6 +60,7 @@ export const getAssigns = async (group_id) => {
         const { assigns, tasks } = response.data;
         assigns.map((assign, index) =>
             data.push({
+                id: assign.id,
                 name: tasks[index].name,
                 state: assign.state === 0 ? "No iniciada" : assign.state === 1 ? "En progreso" : "Finalizada",
                 description: tasks[index].description === "" ? "Sin descripción" : tasks[index].description,

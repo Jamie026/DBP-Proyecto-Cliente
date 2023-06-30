@@ -13,6 +13,7 @@ import { EditGroup } from "../../pages/groups/editGroup";
 
 import { Assigns } from "../../pages/tasks/assigns";
 import { TaskData } from "../../pages/tasks/tasks";
+import { Timer } from "../../pages/tasks/timer";
 
 export default function App() {
     return (
@@ -26,6 +27,7 @@ export default function App() {
                 <Route path="/tasks" element={<TaskData />} />
                 <Route path="/group/:group_id" element={<EditGroup />} />
                 <Route path="/assigns/:group_id" element={<Assigns />} />
+                <Route path="/timer/:assign_id" element={<Timer />} />
             </Routes>
             <NotificationContainer />
         </BrowserRouter>

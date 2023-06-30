@@ -21,10 +21,10 @@ export const AlertCard = ({ handleClose, handleConfirm, text }) => {
                         {text}
                     </section>
                     <section className="col-10 text-center ">
-                        <button className="btn btn-success mx-2" onClick={handleConfirm} autoFocus>
+                        <button className="btn btn-success" onClick={handleConfirm} autoFocus>
                             Aceptar
                         </button>
-                        <button className="btn btn-danger mx-2" onClick={handleClose}>
+                        <button className="btn btn-danger" onClick={handleClose}>
                             Cancelar
                         </button>
                     </section>

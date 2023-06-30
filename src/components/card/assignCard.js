@@ -13,10 +13,10 @@ export const AssignCard = ({ assign }) => {
                 <p className="card-text">
                     {assign.description}
                 </p>
-                <a href="#" className="btn btn-outline-primary m-1">
+                <a href={"/timer/" + assign.id} className="btn btn-outline-primary mx-2 my-1">
                     Gestionar asignación
                 </a>
-                <a href="#" className="btn btn-outline-danger m-1">
+                <a href="#" className="btn btn-outline-danger mx-2 my-1">
                     Eliminar asignación
                 </a>
             </div>
