@@ -30,7 +30,7 @@ export const Assigns = () => {
             <LoggedNav />
             <div className="contenedor flex-row align-items-start justify-content-center">
                 {assigns.map((item) => (
-                    <AssignCard key={item} assign={item} />
+                    <AssignCard key={item.name} assign={item} />
                 ))}                
             </div>
         </main>
