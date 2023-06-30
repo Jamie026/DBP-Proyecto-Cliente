@@ -35,3 +35,12 @@ export const createAssign = async (data) => {
         return { error: error.response.data.result.error };
     }
 };
+
+export const assignsByGroup = async (group_id) => {
+    try {
+        const response = await https.get("/assigns/" + group_id);
+        return handleResponse(response);
+    } catch (error) {
+        return { error: error.response.data.result.error };
+    }
+};

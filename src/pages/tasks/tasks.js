@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 
-import { format } from "date-fns";
-import { AssignTask } from "./assign";
-
+import { AssignTask } from "./assignTask";
 import { Form } from "../../components/common/form";
 import { LoggedNav } from "../../components/navbar/loggedNav";
 import { TaskTable } from "../../components/table/tasksTable";
@@ -40,7 +38,6 @@ export const TaskData = () => {
 
     const handleTask = async (e) => {
         e.preventDefault();
-        data.date = format(new Date(), "yyyy-MM-dd");
         data.user = user.id;
         const errors = await addTask(fields, data, setRows);
         if (!checkErrors(errors)) NotificationManager.success("Tarea creada", "Exito", 2000);

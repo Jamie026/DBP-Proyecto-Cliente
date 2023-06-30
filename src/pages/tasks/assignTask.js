@@ -7,7 +7,7 @@ import { InputAdornment } from "@mui/material";
 import { Form } from "../../components/common/form.js";
 
 import { checkErrors } from "../../scripts/common/scripts.js";
-import { addAssign, loadTasks } from "../../scripts/task/scripts";
+import { addAssign, loadTasks } from "../../scripts/task/scripts.js";
 
 const fields = [
     { key: "group", name: "group", label: "ID Grupo", prop: { type: "number", InputProps: { startAdornment: (<InputAdornment position="start">#</InputAdornment>) } } },

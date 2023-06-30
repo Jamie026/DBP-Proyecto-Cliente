@@ -26,16 +26,14 @@ export const GroupTable = ({ user_id, rows, setRows }) => {
         }
     };
 
-    const handleOpen = (group_id) => {
-        console.log("Abrir ID:", group_id);
-    };
+    const handleOpen = (group_id) => navigate("/assign/" + group_id);
 
     const columns = [
         { field: "id", headerName: "ID", align: "center", headerAlign: "center", width: 100 },
         { field: "name", headerName: "Nombre", align: "center", headerAlign: "center", width: 220 },
-        { field: "members", headerName: "Miembros", align: "center", headerAlign: "center", width: 170 },
+        { field: "members", headerName: "Miembros", align: "center", headerAlign: "center", width: 160 },
         { field: "admin", headerName: "Permisos", align: "center", headerAlign: "center", width: 160, renderCell: (params) => (params.value === "Admin" ? <Check /> : <Close />) },
-        { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 210, disableColumnMenu: true, renderCell: (params) => (
+        { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 220, disableColumnMenu: true, renderCell: (params) => (
             <div>
                 <button className="btn btn-outline-primary mx-1" title="Ver asignaciones" onClick={() => handleOpen(params.row.id)}>
                     <Assignment />

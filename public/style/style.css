@@ -11,6 +11,18 @@ body {
     background-size: cover;
 }
 
+.navbar {
+    z-index: 999;
+}
+
+.nav-item {
+    width: max-content;
+}
+
+.nav-link:hover {
+    border-bottom: 1px solid black;
+}
+
 .contenedor {
     position: relative;
     width: 100%;

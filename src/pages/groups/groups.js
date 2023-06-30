@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 
-import { format } from "date-fns";
 import { InputAdornment } from "@mui/material";
 
 import { Form } from "../../components/common/form";
@@ -40,7 +39,6 @@ export const GroupData = () => {
     const handleRequest = async (e, newGroup, fields) => {
         e.preventDefault();
         data.user = user.id;
-        data.date = format(new Date(), "yyyy-MM-dd");
         const errors = await addGroup(newGroup, fields, data, setRows);
         if (!checkErrors(errors)) NotificationManager.success("Grupo agregado", "Exito", 2000);
     };

@@ -1,5 +1,6 @@
+import moment from "moment";
 import { validateFields } from "../common/scripts";
-import { createTask, tasksByUser, createAssign, deleteTask } from "../../apis/tasks";
+import { createTask, tasksByUser, createAssign, deleteTask, assignsByGroup } from "../../apis/tasks";
 
 export const addTask = async (fields, data, setRows) => {
     let errors = validateFields(fields, data);
@@ -49,4 +50,22 @@ export const addAssign = async (fields, data) => {
     let response = await createAssign(data);
     if (response.error) return [response.error];
     else return [];
+};
+
+
+export const getAssigns = async (group_id) => {
+    const data = [];
+    const response = await assignsByGroup(group_id);
+    if (response){
+        const { assigns, tasks } = response.data;
+        assigns.map((assign, index) =>
+            data.push({
+                name: tasks[index].name,
+                state: assign.state === 0 ? "No iniciada" : assign.state === 1 ? "En progreso" : "Finalizada",
+                description: tasks[index].description === "" ? "Sin descripción" : tasks[index].description,
+                date: moment.utc(assign.date).format("DD-MM-YYYY")
+            })
+        );
+    }
+    return data;
 };
