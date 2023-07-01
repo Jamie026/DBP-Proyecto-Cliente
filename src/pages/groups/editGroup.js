@@ -66,7 +66,7 @@ export const EditGroup = () => {
                             <Form fields={fields} handleSubmit={handleUpdate} handleInputChange={handleInputChange} title={"Nuevos datos"} />
                         </section>
                         <section className="col-lg-12">
-                            <button className="btn btn-outline-light w-100" onClick={openAlert}>
+                            <button className="btn btn-outline-light w-100 my-2" onClick={openAlert}>
                                 Eliminar grupo
                             </button>
                         </section>

@@ -12,9 +12,9 @@ export const Navbar = ({ navItems, brand }) => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul className="navbar-nav mb-2 mb-lg-0 align-items-center">
+                    <ul className="navbar-nav mb-lg-0 align-items-center">
                         {navItems.map((item) => (
-                            <li key={item.name} className="nav-item my-1 mx-2">
+                            <li key={item.name} className="nav-item mx-2 my-1">
                                 <a className="nav-link" href={item.route}>
                                     {item.name}
                                 </a>

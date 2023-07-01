@@ -27,7 +27,7 @@ export const LoggedPage = () => {
                 <h3 className="text-light subtitulo animate__animated animate__fadeIn animate__delay-2s">
                     No pierdas tiempo y empeza a optimar tu tiempo de trabajo
                 </h3>
-                <a className="btn btn-outline-light" href="/tasks">
+                <a className="btn btn-outline-light my-3" href="/tasks">
                     Gestionar mis tareas
                 </a>
             </div>

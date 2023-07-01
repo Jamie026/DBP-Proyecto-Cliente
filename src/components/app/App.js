@@ -11,9 +11,9 @@ import { Logout } from "../../pages/users/logout";
 import { GroupData } from "../../pages/groups/groups";
 import { EditGroup } from "../../pages/groups/editGroup";
 
-import { Assigns } from "../../pages/tasks/assigns";
+import { Assigns } from "../../pages/tasks/assignsGroup";
 import { TaskData } from "../../pages/tasks/tasks";
-import { Timer } from "../../pages/tasks/timer";
+import { AssignTimer } from "../../pages/tasks/assignTimer";
 
 export default function App() {
     return (
@@ -27,7 +27,7 @@ export default function App() {
                 <Route path="/tasks" element={<TaskData />} />
                 <Route path="/group/:group_id" element={<EditGroup />} />
                 <Route path="/assigns/:group_id" element={<Assigns />} />
-                <Route path="/timer/:assign_id" element={<Timer />} />
+                <Route path="/timer/:assign_id" element={<AssignTimer />} />
             </Routes>
             <NotificationContainer />
         </BrowserRouter>

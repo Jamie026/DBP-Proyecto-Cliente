@@ -43,7 +43,7 @@ export const HomePage = () => {
                     <h3 className="text-light subtitulo animate__animated animate__fadeIn animate__delay-2s">
                         ¿Eres nuevo?
                     </h3>
-                    <a className="btn btn-outline-light w-100" href="/register">
+                    <a className="btn btn-outline-light w-100 my-3" href="/register">
                         Registrate
                     </a>
                 </section>

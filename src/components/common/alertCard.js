@@ -17,14 +17,14 @@ export const AlertCard = ({ handleClose, handleConfirm, text }) => {
                             Confirmación usuario
                         </h3>
                     </section>
-                    <section className="col-10 text-center lh-lg">
-                        {text}
+                    <section className="col-10 lh-lg">
+                        <p className="text-center">{text}</p>
                     </section>
-                    <section className="col-10 text-center ">
-                        <button className="btn btn-success" onClick={handleConfirm} autoFocus>
+                    <section className="col-10 text-center contenedor flex-row">
+                        <button className="btn btn-success my-4 mx-2 flex-fill" onClick={handleConfirm} autoFocus>
                             Aceptar
                         </button>
-                        <button className="btn btn-danger" onClick={handleClose}>
+                        <button className="btn btn-danger my-4 mx-2 flex-fill" onClick={handleClose}>
                             Cancelar
                         </button>
                     </section>

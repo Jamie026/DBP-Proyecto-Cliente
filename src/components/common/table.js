@@ -7,7 +7,7 @@ export const DataTable = ({ rows, columns, title }) => {
             <h3 className="subtitulo">
                 {title}
             </h3>
-            <DataGrid getRowHeight={() => "auto"} sx={{ background: "white", border: "2px solid black", textAlign: "center" }} showColumnVerticalBorder showCellVerticalBorder columnHeaderHeight={70} rows={rows} columns={columns} initialState={{ pagination: { paginationModel: { pageSize: 6 } } }} pageSizeOptions={[6]} />
+            <DataGrid getRowHeight={() => "auto"} sx={{ background: "white", border: "2px solid black", textAlign: "center" }} showColumnVerticalBorder showCellVerticalBorder columnHeaderHeight={70} rows={rows} columns={columns} initialState={{ pagination: { paginationModel: { pageSize: 5 } } }} pageSizeOptions={[5]} />
         </Box>
     );
 };

@@ -37,10 +37,14 @@ export const MembersTable = ({ user_id, group_id, rows, setRows }) => {
         { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 155, disableColumnMenu: true, renderCell: (params) => (
             <div>
                 { params.value === "Admin" ? 
-                    (<button title="Quitar privilegios" onClick={() => handleRemove(params.row.id)} className="btn btn-outline-warning mx-1"><RemoveModerator /> </button>) : 
-                    (<button title="Otorgar privilegios" onClick={() => handleGive(params.row.id)} className="btn btn-outline-primary mx-1"><AddModerator /></button>)
+                    (<button title="Quitar privilegios" onClick={() => handleRemove(params.row.id)} className="btn btn-outline-warning my-2 mx-1">
+                        <RemoveModerator /> 
+                    </button>) : 
+                    (<button title="Otorgar privilegios" onClick={() => handleGive(params.row.id)} className="btn btn-outline-primary my-2 mx-1">
+                        <AddModerator />
+                    </button>)
                 }  
-                <button className="btn btn-outline-danger m-1" title="Expulsar miembro" onClick={() => handleOut(params.row.id)}>
+                <button className="btn btn-outline-danger my-2 mx-1" title="Expulsar miembro" onClick={() => handleOut(params.row.id)}>
                     <ExitToApp />
                 </button>
             </div>

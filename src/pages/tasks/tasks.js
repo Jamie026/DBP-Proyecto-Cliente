@@ -61,7 +61,7 @@ export const TaskData = () => {
                             <Form fields={fields} handleSubmit={handleTask} handleInputChange={handleInputChange} title={"Crear Tarea"} />
                         </section>
                         <section className="col-lg-12">
-                            <button className="btn btn-outline-light w-100" onClick={openForm}>
+                            <button className="btn btn-outline-light w-100 my-2" onClick={openForm}>
                                 Asignar tarea a grupo
                             </button>
                         </section>

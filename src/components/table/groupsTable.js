@@ -33,13 +33,13 @@ export const GroupTable = ({ user_id, rows, setRows }) => {
         { field: "admin", headerName: "Permisos", align: "center", headerAlign: "center", width: 160, renderCell: (params) => (params.value === "Admin" ? <Check /> : <Close />) },
         { field: "actions", headerName: "", sortable: false, align: "center", headerAlign: "center", width: 220, disableColumnMenu: true, renderCell: (params) => (
             <div>
-                <a href={"/assigns/" + params.row.id} className="btn btn-outline-primary m-1" title="Ver asignaciones">
+                <a href={"/assigns/" + params.row.id} className="btn btn-outline-primary my-2 mx-1" title="Ver asignaciones">
                     <Assignment />
                 </a>
-                <button className="btn btn-outline-warning m-1" title="Editar grupo" onClick={() => handleEdit(params.row.id)}>
+                <button className="btn btn-outline-warning my-2 mx-1" title="Editar grupo" onClick={() => handleEdit(params.row.id)}>
                     <Edit />
                 </button>
-                <button className="btn btn-outline-danger m-1" title="Salir del grupo" onClick={() => handleDelete(params.row.id)}>
+                <button className="btn btn-outline-danger my-2 mx-1" title="Salir del grupo" onClick={() => handleDelete(params.row.id)}>
                     <ExitToApp />
                 </button>
             </div>
