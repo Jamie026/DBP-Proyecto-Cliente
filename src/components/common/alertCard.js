@@ -21,10 +21,10 @@ export const AlertCard = ({ handleClose, handleConfirm, text }) => {
                         <p className="text-center">{text}</p>
                     </section>
                     <section className="col-10 text-center contenedor flex-row">
-                        <button className="btn btn-success my-4 mx-2 flex-fill" onClick={handleConfirm} autoFocus>
+                        <button className="btn btn-outline-success my-4 mx-2 flex-fill" onClick={handleConfirm} autoFocus>
                             Aceptar
                         </button>
-                        <button className="btn btn-danger my-4 mx-2 flex-fill" onClick={handleClose}>
+                        <button className="btn btn-outline-danger my-4 mx-2 flex-fill" onClick={handleClose}>
                             Cancelar
                         </button>
                     </section>

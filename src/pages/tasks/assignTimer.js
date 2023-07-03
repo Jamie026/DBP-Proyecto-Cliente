@@ -9,8 +9,8 @@ import { Countdown } from "./chronometer";
 
 const fields = [
     { key: "work", name: "work", label: "Tiempo trabajo", prop: { type: "time", InputLabelProps: { shrink: true } } },
-    { key: "rest", name: "task", label: "Tiempo descanso", prop: { type: "time", InputLabelProps: { shrink: true } } },
-    { key: "count", name: "rest", label: "Número repeticiones", prop: { type: "number" } }
+    { key: "rest", name: "rest", label: "Tiempo descanso", prop: { type: "time", InputLabelProps: { shrink: true } } },
+    { key: "count", name: "count", label: "Número repeticiones", prop: { type: "number" } }
 ];
 
 export const AssignTimer = () => {
@@ -26,13 +26,12 @@ export const AssignTimer = () => {
 
     const handleTimer = (e) => {
         e.preventDefault();
-        NotificationManager.warning("Inicializando cronómetro...", "Alerta", 2000);
         const timerAMilliseconds = moment.duration(data.work, "HH:mm").asMilliseconds();
         const timerBMilliseconds = moment.duration(data.rest, "HH:mm").asMilliseconds();
         setTimerA(timerAMilliseconds);
         setTimerB(timerBMilliseconds);
         setCounter(Number(data.count) || 0);
-        NotificationManager.success("Cronómetro inicializado", "Exito", 2000);
+        NotificationManager.success("Cronómetro actualizado", "Exito", 2000);
     };
 
     return (
@@ -40,7 +39,7 @@ export const AssignTimer = () => {
             <LoggedNav />
             <div className="contenedor flex-row align-items-center justify-content-center">
                 <section className="col-10 col-md-5">
-                    <Form fields={fields} handleSubmit={handleTimer} handleInputChange={handleInputChange} title={"Iniciar cronómetro"} />
+                    <Form fields={fields} handleSubmit={handleTimer} handleInputChange={handleInputChange} title={"Actualizar cronómetro"} />
                 </section>
                 <section className="col-10 col-md-5">
                     <Countdown timerA={timerA} timerB={timerB} counter={counter} />
