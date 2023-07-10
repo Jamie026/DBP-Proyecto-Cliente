@@ -11,7 +11,7 @@ export const initUser = async (fields, data, registered) => {
 
 export const checkUser = async () => {
     const response = await authenticateUser();
-    if (!response.error) return response.data;
+    if (!response.error) return response.data.user;
     else return null;
 };
 

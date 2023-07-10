@@ -4,7 +4,7 @@ import { NotificationManager } from "react-notifications";
 import axios from "axios";
 
 export const https = axios.create({
-    baseURL: "http://127.0.0.1:5000",
+    baseURL: "https://proyectodbp.pythonanywhere.com",
     withCredentials: true,
 });
 
@@ -29,7 +29,7 @@ export const validateFields = (fields, data) => {
     fields.forEach((field) => {
         const { name, label } = field;
         const value = data[name] || "";
-        if (!value.trim()) errors.push("El campo " + label.toLowerCase() + " es obligatorio");
+        if (!value.trim()) errors.push("El campo " + label + " es obligatorio");
     });
     return errors;
 };
