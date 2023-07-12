@@ -1,6 +1,6 @@
 import React from "react";
 import { NotificationContainer } from "react-notifications";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { HomePage } from "../../pages/homePage";
 import { LoggedPage } from "../../pages/loggedPage";
@@ -17,7 +17,7 @@ import { AssignTimer } from "../../pages/tasks/assignTimer";
 
 export default function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/register" element={<Register />} />
@@ -30,6 +30,6 @@ export default function App() {
                 <Route path="/timer/:assign_id" element={<AssignTimer />} />
             </Routes>
             <NotificationContainer />
-        </BrowserRouter>
+        </HashRouter>
     );
 };
